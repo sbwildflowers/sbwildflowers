@@ -1,0 +1,78 @@
+var subSightings = [[-119.743,34.587],[-119.746,34.5901],[-119.645,34.5148],[-119.762,34.5665],[-119.645,34.5149],[-119.744,34.5882],[-119.745,34.59],[-119.63,34.5115],[-119.745,34.5902],[-119.743,34.5877],[-119.759,34.5672],[-119.751,34.5807],[-119.759,34.567],[-119.746,34.5902],[-119.63,34.5114],[-119.744,34.5878],[-119.763,34.5651],[-119.759,34.5668],[-119.631,34.5091],[-119.276,34.5229],[-119.746,34.5848],[-119.743,34.5871],[-119.645,34.5147],[-119.754,34.5749],[-119.631,34.5089],[-119.76,34.5674],[-119.604,34.4663],[-119.745,34.5901],[-119.762,34.5664],[-119.631,34.509],[-119.746,34.59],[-119.743,34.5876],[-119.645,34.515],[-119.743,34.5872],[-119.746,34.5849],[-119.743,34.5873],[-119.755,34.5768]];
+$(document).ready(function() {
+	var vectorSource = new ol.source.Vector({
+      //create empty vector
+    });
+
+	//create a bunch of icons and add to source vector
+	subSightings.forEach(function(item,index) {
+		var iconFeature = new ol.Feature({
+		          geometry: new  
+		            ol.geom.Point(ol.proj.fromLonLat(item)),
+		        name: 'Flower',
+		        population: 4000,
+		        rainfall: 500
+		});
+		vectorSource.addFeature(iconFeature);
+	});
+
+    //create the style
+    var iconStyle = new ol.style.Style({
+      image: new ol.style.Icon( ({
+        anchor: [0.5, 46],
+        anchorXUnits: 'fraction',
+        anchorYUnits: 'pixels',
+        opacity: 0.75,
+        src: 'flower.png'
+      }))
+    });
+
+    //add the feature vector to the layer vector, and apply a style to whole layer
+    var vectorLayer = new ol.layer.Vector({
+      source: vectorSource,
+      style: iconStyle
+    });
+
+	var attribution = new ol.control.Attribution({
+	     collapsible: false
+	 });
+
+	 var map = new ol.Map({
+	     controls: ol.control.defaults({attribution: false}).extend([attribution]),
+	     layers: [
+	         new ol.layer.Tile({
+	             source: new ol.source.OSM()
+	         }),
+	         vectorLayer
+	     ],
+	     target: 'map',
+	     view: new ol.View({
+	         center: ol.proj.fromLonLat([-119.644, 34.5158]),
+	         zoom: 15,
+	         maxZoom: 20
+	     })
+	 });
+
+	$('.sightings-wrapper tbody tr .locate').click(function() {
+		$('.sightings-wrapper tr').each(function() {
+			$(this).removeClass('active');
+		});
+		$(this).parent('tr').addClass('active');
+		lat = parseFloat($(this).siblings('.lat').text());
+		lon = parseFloat($(this).siblings('.lon').text());
+        map.getView().animate({
+          center: ol.proj.fromLonLat([lon,lat]),
+          duration: 2000,
+          zoom: 18
+        });
+        var elmnt = document.getElementById('map-wrapper');
+		elmnt.scrollIntoView();
+    });
+
+	var extent = vectorLayer.getSource().getExtent();
+	map.getView().fit(extent, map.getSize());
+
+	$('.map-wrapper button').click(function() {
+		map.getView().fit(extent, map.getSize());
+	});
+});

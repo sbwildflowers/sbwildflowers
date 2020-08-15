@@ -1,0 +1,51 @@
+.hamburglar {
+	padding: 20px;
+}
+
+h1 {
+	float: left;
+}
+
+.wrapper {
+	clear: both;
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	margin-left: 20px;
+	margin-right: 20px;
+	grid-column-gap: 40px;
+}
+
+.wrapper img {
+    margin-right: 20px;
+    max-width: 20vw;
+    max-height: 500px;
+    float: left;
+}
+
+.column {
+	display: flex;
+}
+
+.column > h2 {
+	transform: rotate(180deg);
+    writing-mode: vertical-lr;
+    font-size: 66px;
+    margin: 0 10px 0 0;
+    text-align: right;
+}
+
+.first {
+	margin-top: 0;
+}
+
+p {
+	margin: 10px 0;
+	font-size: 18px;
+}
+
+.legal {
+	text-align: center;
+	padding: 20px 0;
+    border-top: 1px solid #b8d8b8;
+}
+

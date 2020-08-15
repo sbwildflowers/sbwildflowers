@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="flowers.css" />
+		<link rel="stylesheet" type="text/css" href="../global.css" />
+		<script
+		  src="https://code.jquery.com/jquery-3.4.1.min.js"
+		  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+		  crossorigin="anonymous"></script>
+		<script type="text/javascript" src="flowers.js"></script>
+		<script type="text/javascript" src="global.js"></script>
+	</head>
+	<body>
+		<form class="filters">
+			<div class="hamburglar">
+				<div class="slice first"></div>
+				<div class="slice middle"></div>
+				<div class="slice last"></div>
+				<div class="menu">
+					<div class="flower">By Flower</div>
+					<div class="trail">By Trail</div>
+					<div class="about">About</div>
+				</div>
+			</div>
+			<div class="inputs">
+				<div class="filter-group text">
+					<div class="search-box"></div>
+					<input class="name" type="text" placeholder="latin or common name"/>
+				</div>
+			</div>
+			<div class="buttons">
+				<div class="filter-group">
+					<button value="plant">Plant</button>
+					<button value="flowering plant">Flowering Plant</button>
+					<button value="vine">Vine</button>
+					<button value="tree">Tree</button>
+					<button value="shrub">Shrub</button>
+					<button value="fungus">Fungus</button>
+					<button value="fern">Fern</button>
+					<button value="animal">Animal</button>
+				</div>
+				<div class="filter-group">
+					<button value="evergreen">Evergreen</button>
+					<button value="deciduous">Deciduous</button>
+				</div>
+				<div class="filter-group">
+					<button value="annual">Annual</button>
+					<button value="biannual">Biannual</button>
+					<button value="perennial">Perennial</button>
+				</div>
+				<div class="filter-group">
+					<button value="introduced">Introduced</button>
+				</div>
+				<div class="filter-group">
+					<button value="parasite">Parasite</button>
+				</div>
+				<div class="filter-group last">
+					<button class="blooming-month">Blooming in this month</button>
+				</div>
+			</div>
+		</form>
+		<div class="no-results">No results for "<span class="active-buttons"></span>" with "<span class="input-value"></span>"</div>

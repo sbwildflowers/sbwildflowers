@@ -1,0 +1,309 @@
+.hamburglar {
+	padding: 20px;
+	display: inline-block;
+}
+
+h1 {
+	display: inline-block;
+	margin-top: 20px;
+}
+
+.wrapper {
+	clear: both;
+	margin-left: 20px;
+	margin-right: 20px;
+	display: grid;
+	grid-template-columns: 800px auto;
+	grid-gap: 40px;
+	margin-bottom: 40px;
+}
+
+.sightings-wrapper,
+.taxonomy {
+	overflow-x: auto;
+}
+
+@media screen and (max-width: 1279px) {
+	.wrapper {
+		grid-template-columns: 1fr;
+	}
+
+	.images-wrapper {
+		order: 1;
+	}
+
+	.map-wrapper {
+		order: 2;
+	}
+
+	.sightings-wrapper {
+		order: 3;
+	}
+
+	.general-info {
+		order: 4;
+	}
+
+	.associates {
+		order: 5;
+	}
+
+	.external-links {
+		order: 6;
+	}
+}
+
+.taxonomy {
+	clear: both;
+	margin: 20px;
+}
+
+.taxonomy th {
+	background: #b8d8b8;
+	padding: 5px;
+}
+
+.taxonomy tr {
+	background: lightblue;
+}
+
+.taxonomy td {
+	padding: 5px;
+}
+
+.images-wrapper a {
+	display: block;
+}
+
+.img-container {
+	display: inline-block;
+	margin-right: 20px;
+	position: relative;
+	vertical-align: top;
+	margin-bottom: 20px;
+}
+
+img {
+	border-radius: 20px;
+}
+
+label {
+    display: block;
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 17px;
+    background: #b8d8b8;
+    padding: 4px 7px;
+}
+
+/* see more responsive queries at bottom for map sizing */
+#map {
+	width: 800px;
+	height: 500px
+}
+
+.map {
+	display: inline-block;
+	margin-right: 20px;
+	border: 2px solid #b8d8b8;
+}
+
+.map-wrapper button {
+	border: 0;
+    padding: 5px 7px;
+    background: #b8d8b8;
+    cursor: pointer;
+    margin-right: 4px;
+    color: #427942;
+    display: block;
+}
+
+.general-info table {
+	font-size: 20px;
+}
+
+.general-info th {
+	text-align: right;
+}
+
+.general-info td {
+	padding: 2px 5px;
+}
+
+.table-wrapper {
+	max-height: 300px;
+	overflow-y: scroll;
+}
+
+.sightings-wrapper {
+	margin-right: 20px;
+}
+
+@media screen and (max-width: 850px) {
+	.sightings-wrapper .table-wrapper {
+		max-width: 75%;
+	}
+}
+
+.sightings-wrapper table {
+	width: 100%;
+}
+
+.sightings-wrapper th {
+	background: #b8d8b8;
+    position: sticky;
+    top: 0;
+}
+
+.sightings-wrapper td,
+.sightings-wrapper th {
+	padding: 5px;
+}
+
+.sightings-wrapper .even {
+	background: lightblue;
+}
+
+.sightings-hidden {
+	color: blue;
+	text-align: center;
+}
+
+.sightings-wrapper .locate {
+	cursor: pointer;
+}
+
+.sightings-wrapper .scope {
+	width: 18px;
+    height: 18px;
+    border: 2px solid #427942;
+    border-radius: 99px;
+    position: relative;
+}
+
+.sightings-wrapper .scope:after {
+	content: '';
+    width: 26px;
+    height: 2px;
+    background: #427942;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -4px;
+}
+
+.sightings-wrapper .scope:before {
+	content: '';
+    width: 2px;
+    height: 26px;
+    background: #427942;
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sightings-wrapper tr.active {
+	background: #427942;
+    color: white;
+}
+
+.sightings-wrapper tr.active .scope {
+    border: 2px solid white;
+}
+
+.sightings-wrapper tr.active .scope:after {
+    background: white;
+}
+
+.sightings-wrapper tr.active .scope:before {
+    background: white;
+}
+
+.associates .list {
+	display: flex;
+}
+
+.associates .associate {
+	margin: 10px;
+	text-align: center;
+}
+
+.trail-list {
+	margin-top: 20px;
+    border-top: 1px solid #b8d8b8;
+}
+
+.trail-list li {
+	list-style-type: none;
+    position: relative;
+	font-size: 20px;
+	cursor: pointer;
+	margin-top: 4px;
+}
+
+.trail-list li span:after {
+	content: '';
+    position: absolute;
+    left: -18px;
+    top: 1px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-left: 14px solid #427942;
+    border-bottom: 8px solid transparent;
+    transition: transform .5s;
+    transform: rotate(90deg);
+}
+
+.trail-list li span.closed:after {
+	transform: rotate(0deg);
+}
+
+.trail-list ul li ul li ul li {
+	list-style-type: disc;
+	cursor: auto;
+}
+
+@media screen and (min-width: 800px) and (max-width: 900px) {
+	#map {
+		width: 750px;
+		height: 469px;
+	}
+}
+
+@media screen and (min-width: 700px) and (max-width: 799px) {
+	#map {
+		width: 650px;
+		height: 406px;
+	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 699px) {
+	#map {
+		width: 550px;
+		height: 344px;
+	}
+}
+
+@media screen and (min-width: 500px) and (max-width: 599px) {
+	#map {
+		width: 450px;
+		height: 281px;
+	}
+}
+
+@media screen and (min-width: 400px) and (max-width: 499px) {
+	#map {
+		width: 350px;
+		height: 219px;
+	}
+}
+
+@media screen and (max-width: 399px) {
+	#map {
+		width: 300px;
+		height: 188px;
+	}
+}
