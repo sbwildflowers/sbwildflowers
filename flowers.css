@@ -112,6 +112,12 @@ button:focus {
 	margin-top: 20px;
 }
 
+@media (max-width: 850px) {
+	.species-group {
+		display: block;
+	}
+}
+
 .specie {
 	text-align: center;
 	padding: 10px;
