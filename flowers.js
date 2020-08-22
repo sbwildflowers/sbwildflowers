@@ -70,5 +70,9 @@ $(document).ready(function() {
 		console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.");
 		
 	});
+
+	$('.filter-icon').click(function() {
+		$('div.buttons').slideToggle(500);
+	});
 });
 

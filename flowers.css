@@ -3,7 +3,7 @@ body {
 }
 
 form.filters {
-	padding: 20px;
+	padding: 20px 20px 10px 20px;
 	border-bottom: 1px solid #b8d8b8;
 	background: #fff;
 	position: sticky;
@@ -24,6 +24,7 @@ form.filters {
 	display: inline-block;
 	padding-right: 10px;
 	padding-left: 10px;
+	margin-bottom: 10px;
 }
 
 .buttons .filter-group:not(.last) {
@@ -71,7 +72,22 @@ form.filters {
     z-index: 999;
     cursor: pointer;
 }
+/*
+@media (max-width: 650px) {
+	.buttons .filter-group:not(.last) {
+		border-right: 0;
+	}
 
+	.filter-group:not(.text):not(.last) {
+		width: 98%;
+		border-bottom: 1px solid #b8d8b8;
+	}
+
+	.filter-group:not(.text):not(.last) button {
+		margin-bottom: 10px;
+	}
+}
+*/
 label {
 	font-family: Cantarell;
     color: #920176;
@@ -101,6 +117,25 @@ button.active {
     color: floralwhite;
 }
 
+.filter-icon {
+	position: absolute;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    cursor: pointer;
+}
+
+.filter-icon span {
+	font-size: 18px;
+    vertical-align: middle;
+    position: relative;
+    color: #427942;
+}
+
+.filter-icon svg {
+	fill: #427942;
+}
+
 button:focus {
 	outline: 0;
 }
@@ -112,7 +147,25 @@ button:focus {
 	margin-top: 20px;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1399px) and (min-width: 1080px) {
+	.species-group {
+		grid-template-columns: repeat(4,1fr);
+	}
+}
+
+@media (max-width: 1079px) and (min-width: 751px) {
+	.species-group {
+		grid-template-columns: repeat(3,1fr);
+	}
+}
+
+@media (max-width: 750px) and (min-width: 501px) {
+	.species-group {
+		grid-template-columns: repeat(2,1fr);
+	}
+}
+
+@media (max-width: 500px) {
 	.species-group {
 		display: block;
 	}
