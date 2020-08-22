@@ -72,7 +72,7 @@ form.filters {
     z-index: 999;
     cursor: pointer;
 }
-/*
+
 @media (max-width: 650px) {
 	.buttons .filter-group:not(.last) {
 		border-right: 0;
@@ -87,7 +87,7 @@ form.filters {
 		margin-bottom: 10px;
 	}
 }
-*/
+
 label {
 	font-family: Cantarell;
     color: #920176;
@@ -101,6 +101,24 @@ input {
     padding: 3px 7px;
     font-size: 16px;
     position: relative;
+}
+
+@media (max-width: 650px) {
+	input {
+		font-size: 18px;
+	}
+
+	.filter-group.text .search-box {
+		height: 29px;
+	}
+
+	.filter-group.text:before {
+		top: 5px;
+	}
+
+	.filter-group.text:after {
+		top: 15px;
+	}
 }
 
 button {
@@ -134,6 +152,15 @@ button.active {
 
 .filter-icon svg {
 	fill: #427942;
+}
+
+@media (max-width: 650px) {
+	.filter-icon {
+		position: relative;
+		justify-content: center;
+		right: 0;
+		top: 0;
+	}
 }
 
 button:focus {
