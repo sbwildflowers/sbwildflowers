@@ -8,6 +8,16 @@ h1 {
 	margin-top: 20px;
 }
 
+@media (max-width: 500px) {
+	h1 {
+		display: block;
+	}
+
+	.hamburglar {
+		padding: 7px 20px 20px;
+	}
+}
+
 .wrapper {
 	clear: both;
 	margin-left: 20px;
@@ -140,12 +150,6 @@ label {
 	margin-right: 20px;
 }
 
-@media screen and (max-width: 850px) {
-	.sightings-wrapper .table-wrapper {
-		max-width: 75%;
-	}
-}
-
 .sightings-wrapper table {
 	width: 100%;
 }
@@ -228,6 +232,17 @@ label {
 .associates .associate {
 	margin: 10px;
 	text-align: center;
+}
+
+@media (max-width: 700px) {
+	.associates .list {
+		display: block;
+	}
+
+	.associates .list .associate {
+		margin-left: 0;
+		text-align: left;
+	}
 }
 
 .trail-list {
