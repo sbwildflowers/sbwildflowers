@@ -13,6 +13,7 @@ function buttonFilter () {
 			$(this).parent('.specie').addClass('hide').removeClass('shown');
 		}
 	});
+	ga('send', 'event', 'Button', 'Filter', 'test');
 	detectNoRresults();
 }
 
@@ -69,11 +70,7 @@ $(document).ready(function() {
 	$('input.name').blur(function() {
 		console.log('blurred');
 		value = $('input.name').val();
-		ga('send', 'event', {
-		    eventCategory: 'Search',
-		    eventAction: 'Latin or Common Name',
-		    eventLabel: 'test'
-		  });
+		ga('send', 'event', 'Search', 'Latin or Common Name', 'test');
 	});
 
 	$('button').click(function(e) {
