@@ -45,15 +45,6 @@ function lazyLoad() {
 }
 
 $(document).ready(function() {
-	/*window.onscroll = function(ev) {
-	    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-	        productive = $('.lazy').slice(0,12);
-			$.each(productive,function() {
-				$(this).addClass('shown').removeClass('lazy');
-			});
-	    }
-	};*/
-
 	document.addEventListener('scroll', lazyLoad);
 	window.addEventListener('resize', lazyLoad);
 	window.addEventListener('orientationChange', lazyLoad);
@@ -79,7 +70,7 @@ $(document).ready(function() {
 		ga('send', 'event', {
 		    eventCategory: 'Search',
 		    eventAction: 'Latin or Common Name',
-		    eventLabel: $(this).val();
+		    eventLabel: $(this).val()
 		  });
 	});
 
