@@ -1,0 +1,167 @@
+body {
+	margin: 0;
+	overflow: hidden;
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.tridant {
+	height: 100vh;
+	position: relative;
+}
+
+.trail {
+	background: #b8d8b8;
+}
+
+.flower {
+	background: lightblue;
+}
+
+.flower img {
+	transform: rotate(-14deg);
+}
+
+.month {
+	background: pink;
+}
+
+p {
+	font-family: junicoderegular;
+	color: #714e46;
+	font-weight: 600;
+	line-height: .9;
+	position: absolute;
+	right: 25px;
+	top: 25px;
+}
+
+p span:nth-child(1) {
+    text-orientation: upright;
+    writing-mode: tb;
+    letter-spacing: -10px;
+    font-size: 42px;
+    color: darkolivegreen;
+}
+
+.month p span:nth-child(1) {
+	text-orientation: inherit;
+    writing-mode: inherit;
+    letter-spacing: inherit;
+    display: block;
+}
+
+p span:nth-child(2) {
+	font-size: 89px;
+}
+
+.tridant img {
+	max-height: 90vh;
+	max-width: 33vw;
+}
+
+img.george {
+	position: absolute;
+	right: 0;
+	bottom: -62px;
+	transition: bottom .5s;
+	width: 100px;
+}
+
+img.george:hover {
+	bottom: 0;
+}
+
+img.trail {
+	max-width: 75%;
+    top: 20%;
+    position: relative;
+    margin-left: 40px;
+}
+
+@media (max-width: 1400px) and (min-width: 1080px) {
+	.tridant {
+		display: grid;
+		align-items: center;
+	}
+
+	img.trail {
+		max-width: 33vw;
+		top: unset;
+	}
+
+	p {
+		top: 6vh;
+		text-shadow: 4px 4px 2px #b8d8b8;
+		display: grid;
+		grid-template-columns: 40px auto;
+		transform: translateX(50%);
+		right: 50%;
+		text-align: left;
+	}
+
+	p span:nth-child(1) {
+		font-size: 37px;
+	}
+
+	p span:nth-child(2) {
+		font-size: 70px;
+	}
+}
+
+@media (max-width: 1079px) {
+	body {
+		overflow: auto;
+	}
+
+	.wrapper {
+		grid-template-columns: 1fr;
+	}
+
+	.tridant {
+		height: unset;
+		padding: 20px;
+		text-align: center;
+	}
+
+	.tridant.month {
+		height: 400px;
+	}
+
+	.tridant img {
+		max-width: 100%;
+	}
+
+	.flower img {
+		transform: none;
+	}
+
+	.trail img {
+		top: unset;
+		margin-left: 0;
+	}
+
+	p {
+		text-shadow: 4px 4px 2px #b8d8b8;
+		display: grid;
+		grid-template-columns: 40px auto;
+		transform: translateX(50%);
+		right: 50%;
+		text-align: left;
+	}
+
+	p span:nth-child(1) {
+		font-size: 37px;
+	}
+
+	p span:nth-child(2) {
+		font-size: 70px;
+	}
+
+	img.george {
+		display: none;
+	}
+}

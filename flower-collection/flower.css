@@ -277,6 +277,10 @@ label {
 	transform: rotate(0deg);
 }
 
+.trail-list span.closed + ul {
+	display: none;
+}
+
 .trail-list ul li ul li ul li {
 	list-style-type: disc;
 	cursor: auto;
