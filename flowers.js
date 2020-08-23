@@ -32,7 +32,6 @@ function detectNoRresults() {
 }
 
 function lazyLoad() {
-	var t0 = performance.now();
 	productive = $('div:not(.hide) > .lazy');
 	$.each(productive,function() {
 		if ($(this).parent().offset().top < (window.innerHeight + window.pageYOffset)) {
@@ -40,18 +39,14 @@ function lazyLoad() {
 			$(this).removeClass('lazy');
 		}
 	});
-	var t1 = performance.now();
-	console.log("Call to lazyLoad took " + (t1 - t0) + " milliseconds.");
 }
 
 $(document).ready(function() {
 	document.addEventListener('scroll', lazyLoad);
 	window.addEventListener('resize', lazyLoad);
 	window.addEventListener('orientationChange', lazyLoad);
-	ga('create', 'UA-176098216-1', 'auto');
 
 	$('input').keyup(function() {
-		var t0 = performance.now();
 		var re = $(this).val().toLowerCase();
 		$('.specie').each(function() {
 			var info = $(this).find('.name').text().toLowerCase() + ' ' + $(this).find('.common-name').text().toLowerCase();
@@ -61,15 +56,8 @@ $(document).ready(function() {
 				$(this).addClass('input-hide').removeClass('input-shown');
 			}
 		});
-		var t1 = performance.now();
-		console.log("Call to input took " + (t1 - t0) + " milliseconds.");
 		detectNoRresults();
 		lazyLoad();
-	});
-
-	$('input.name').blur(function() {
-		console.log('blurred');
-		value = $('input.name').val();
 	});
 
 	$('button').click(function(e) {
@@ -79,14 +67,8 @@ $(document).ready(function() {
 			$(this).removeClass('active');
 		});
 		$(this).toggleClass('active').removeClass('clicked');
-		var t0 = performance.now();
 		buttonFilter();
-		var t1 = performance.now();
-		console.log("Call to button took " + (t1 - t0) + " milliseconds.");
 		lazyLoad();
-		ga(function(tracker) {
-		  tracker.send('event', 'link', 'click', 'test');
-		});
 	});
 
 	$('.filter-icon').click(function() {
