@@ -210,18 +210,15 @@ button:focus {
 	position: relative;
 }
 
-.lazy,
 .hide,
 .shown.hide,
 .shown.input-hide,
 .hide.input-shown,
-.lazy.input-shown.hide,
 .input-hide  {
 	display: none;
 }
 
 .shown,
-.lazy.input-shown,
 .input-shown {
 	display: block;
 }
@@ -241,6 +238,10 @@ img {
 	max-height: 150px;
 	max-width: 225px;
 	border-radius: 20px;
+}
+
+img.lazy {
+	min-height: 150px;
 }
 
 p {

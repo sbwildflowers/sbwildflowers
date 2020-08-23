@@ -31,15 +31,32 @@ function detectNoRresults() {
 	}
 }
 
+function lazyLoad() {
+	var t0 = performance.now();
+	productive = $('div:not(.hide) > .lazy');
+	$.each(productive,function() {
+		if ($(this).parent().offset().top < (window.innerHeight + window.pageYOffset)) {
+			$(this).attr('src',$(this).attr('data-src'));
+			$(this).removeClass('lazy');
+		}
+	});
+	var t1 = performance.now();
+	console.log("Call to lazyLoad took " + (t1 - t0) + " milliseconds.");
+}
+
 $(document).ready(function() {
-	window.onscroll = function(ev) {
+	/*window.onscroll = function(ev) {
 	    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
 	        productive = $('.lazy').slice(0,12);
 			$.each(productive,function() {
 				$(this).addClass('shown').removeClass('lazy');
 			});
 	    }
-	};
+	};*/
+
+	document.addEventListener("scroll", lazyLoad);
+	window.addEventListener("resize", lazyLoad);
+	window.addEventListener("orientationChange", lazyLoad);
 
 	$('input').keyup(function() {
 		var t0 = performance.now();
@@ -53,8 +70,9 @@ $(document).ready(function() {
 			}
 		});
 		var t1 = performance.now();
-		console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.");
+		console.log("Call to input took " + (t1 - t0) + " milliseconds.");
 		detectNoRresults();
+		lazyLoad();
 	});
 
 	$('button').click(function(e) {
@@ -67,8 +85,8 @@ $(document).ready(function() {
 		var t0 = performance.now();
 		buttonFilter();
 		var t1 = performance.now();
-		console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.");
-		
+		console.log("Call to button took " + (t1 - t0) + " milliseconds.");
+		lazyLoad();
 	});
 
 	$('.filter-icon').click(function() {
