@@ -32,7 +32,7 @@ function detectNoRresults() {
 }
 
 function lazyLoad() {
-	productive = $('div:not(.hide) > .lazy');
+	productive = $('div:not(.hide) > a .lazy');
 	$.each(productive,function() {
 		if ($(this).parent().offset().top < (window.innerHeight + window.pageYOffset)) {
 			$(this).attr('src',$(this).attr('data-src'));
@@ -75,4 +75,3 @@ $(document).ready(function() {
 		$('div.buttons').slideToggle(500);
 	});
 });
-
