@@ -66,7 +66,7 @@ $(document).ready(function() {
 		lazyLoad();
 	});
 
-	$('input.name').onblur(function() {
+	$('input.name').blur(function() {
 		ga('send', 'event', {
 		    eventCategory: 'Search',
 		    eventAction: 'Latin or Common Name',
