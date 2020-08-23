@@ -13,11 +13,6 @@ function buttonFilter () {
 			$(this).parent('.specie').addClass('hide').removeClass('shown');
 		}
 	});
-	if ("ga" in window) {
-	    tracker = ga.getAll()[0];
-	    if (tracker)
-	        tracker.send("event", "Test", "Test GA");
-	}
 	detectNoRresults();
 }
 
@@ -74,7 +69,14 @@ $(document).ready(function() {
 	$('input.name').blur(function() {
 		console.log('blurred');
 		value = $('input.name').val();
-		ga('send', 'event', 'Search', 'Latin or Common Name', 'test');
+		ga('send', 'event', {
+		    eventCategory: 'Search',
+		    eventAction: 'Latin or Common Name',
+		    eventLabel: 'test',
+		    'hitCallback' : function () {
+		      alert("Event received");
+		   }
+		});
 	});
 
 	$('button').click(function(e) {
