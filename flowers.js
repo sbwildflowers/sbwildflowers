@@ -48,6 +48,7 @@ $(document).ready(function() {
 	document.addEventListener('scroll', lazyLoad);
 	window.addEventListener('resize', lazyLoad);
 	window.addEventListener('orientationChange', lazyLoad);
+	ga('create', 'UA-176098216-1', auto);
 
 	$('input').keyup(function() {
 		var t0 = performance.now();
@@ -69,14 +70,6 @@ $(document).ready(function() {
 	$('input.name').blur(function() {
 		console.log('blurred');
 		value = $('input.name').val();
-		ga('send', 'event', {
-		    eventCategory: 'Search',
-		    eventAction: 'Latin or Common Name',
-		    eventLabel: 'test',
-		    'hitCallback' : function () {
-		      alert("Event received");
-		   }
-		});
 	});
 
 	$('button').click(function(e) {
@@ -91,6 +84,9 @@ $(document).ready(function() {
 		var t1 = performance.now();
 		console.log("Call to button took " + (t1 - t0) + " milliseconds.");
 		lazyLoad();
+		ga(function(tracker) {
+		  tracker.send('event', 'link', 'click', 'test');
+		});
 	});
 
 	$('.filter-icon').click(function() {
