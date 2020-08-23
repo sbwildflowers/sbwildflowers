@@ -54,9 +54,9 @@ $(document).ready(function() {
 	    }
 	};*/
 
-	document.addEventListener("scroll", lazyLoad);
-	window.addEventListener("resize", lazyLoad);
-	window.addEventListener("orientationChange", lazyLoad);
+	document.addEventListener('scroll', lazyLoad);
+	window.addEventListener('resize', lazyLoad);
+	window.addEventListener('orientationChange', lazyLoad);
 
 	$('input').keyup(function() {
 		var t0 = performance.now();
@@ -73,6 +73,14 @@ $(document).ready(function() {
 		console.log("Call to input took " + (t1 - t0) + " milliseconds.");
 		detectNoRresults();
 		lazyLoad();
+	});
+
+	$('input.name').onblur(function() {
+		ga('send', 'event', {
+		    eventCategory: 'Search',
+		    eventAction: 'Latin or Common Name',
+		    eventLabel: $(this).val();
+		  });
 	});
 
 	$('button').click(function(e) {
