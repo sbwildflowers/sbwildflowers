@@ -67,10 +67,12 @@ $(document).ready(function() {
 	});
 
 	$('input.name').blur(function() {
+		console.log('blurred');
+		value = $('input.name').val();
 		ga('send', 'event', {
 		    eventCategory: 'Search',
 		    eventAction: 'Latin or Common Name',
-		    eventLabel: $(this).val()
+		    eventLabel: value
 		  });
 	});
 
