@@ -13,7 +13,11 @@ function buttonFilter () {
 			$(this).parent('.specie').addClass('hide').removeClass('shown');
 		}
 	});
-	ga('send', 'event', 'Button', 'Filter', 'test');
+	if ("ga" in window) {
+	    tracker = ga.getAll()[0];
+	    if (tracker)
+	        tracker.send("event", "Test", "Test GA");
+	}
 	detectNoRresults();
 }
 
