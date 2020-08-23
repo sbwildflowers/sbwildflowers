@@ -72,7 +72,7 @@ $(document).ready(function() {
 		ga('send', 'event', {
 		    eventCategory: 'Search',
 		    eventAction: 'Latin or Common Name',
-		    eventLabel: value
+		    eventLabel: 'test'
 		  });
 	});
 
