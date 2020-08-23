@@ -48,7 +48,7 @@ $(document).ready(function() {
 	document.addEventListener('scroll', lazyLoad);
 	window.addEventListener('resize', lazyLoad);
 	window.addEventListener('orientationChange', lazyLoad);
-	ga('create', 'UA-176098216-1', auto);
+	ga('create', 'UA-176098216-1', 'auto');
 
 	$('input').keyup(function() {
 		var t0 = performance.now();
