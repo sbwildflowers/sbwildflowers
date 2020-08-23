@@ -49,3 +49,28 @@ p {
     border-top: 1px solid #b8d8b8;
 }
 
+@media (max-width: 950px) {
+	.wrapper {
+		display: block;
+	}
+
+	.wrapper img {
+		min-width: 200px;
+		margin-bottom: 10px;
+	}
+
+	.column {
+		display: block;
+	}
+
+	.column > h2 {
+		transform: none;
+		writing-mode: inherit;
+		text-align: left;
+	}
+
+	.info-wrapper {
+		margin-top: 15px;
+	}
+}
+

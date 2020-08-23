@@ -17,6 +17,7 @@
 		  crossorigin="anonymous"></script>
 		<script type="text/javascript" src="global.js"></script>
 		<meta name="viewport" content="width=device-width">
+		<meta name="robots" content="noindex, nofollow">
 	</head>
 	<body>
 		<div class="hamburglar">
@@ -24,9 +25,9 @@
 			<div class="slice middle"></div>
 			<div class="slice last"></div>
 			<div class="menu">
-				<div class="flower">By Flower</div>
-				<div class="trail">By Trail</div>
-				<div class="about">About</div>
+				<a href="index.html"><div class="flower">By Flower</div></a>
+				<div class="trail"><strike>By Trail</strike></div>
+				<a href="about.html"><div class="about">About</div></a>
 			</div>
 		</div>
 		<h1>About</h1>
@@ -55,8 +56,12 @@
 				<h2>Website</h2>
 				<div class="info-wrapper">
 				<img src="daniel.jpg" />
-					<h3 class="first">Justification</h3>
-					<p>I am a trail runner. When I ran trails in the aftermath the Jesusita Fire (May 2009) I watched the burst of regrowth and the exuberance of the new blooms. That motivated me to really learn to identify the local wildflowers, and the best way to learn is to write down everything as I learned. This website is the result.</p>
+					<h2 class="first">Development</h2>
+					<p>George first handed me a database and set of php files back in 2018, and I promptly spent a week spinning up a version of his site using Drupal. This was a poor platform choice for this project, and after getting the site around 70% of the way there, I started butting up against the reasons why. Discouraged by getting to the top of the pass only to find another set of mountains ahead, I sat down and took a 2 year nap.</p>
+					<p>Fast-forward to 2020, possibly due to lack of distractions, I finally found myself with some excitement about starting up this project again. Part of the excitement was realizing that there was no real reason for the site to have an actual database at all, and that meant I would get to build a static site generator in Python, which was infinitely more interesting to me than doing a LAMP stack. </p>
+					<p>This also meant doing a lot more from "scratch". When I needed a lazy loader, I wrote my own instead of using a library. When I needed maps, I did not write my own. Who would have time for such a thing? I used OpenLayers.</p>
+					<p>Anyways, George has presumably forgiven me for knowing nothing about flowers, and occasionally passes me a new database. I can be reached through <a href="https://www.linkedin.com/in/daniel-mcleod-10b50055/">LinkedIn</a></p>
+					<p>p.s. I would also be amused if anyone happened to know where this picture that I photoshopped/parodied comes from</p>
 				</div>
 			</div>
 		</div>
