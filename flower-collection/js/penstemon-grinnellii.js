@@ -1,4 +1,4 @@
-var subSightings = [[-119.636,34.4864],[-119.321,34.696],[-119.636,34.4865],[-119.65,34.4888],[-119.181,34.7262],[-119.747,34.5054],[-119.65,34.4889],[-119.32,34.6955],[-119.648,34.4874],[-119.636,34.4866],[-119.65,34.489],[-119.592,34.4772],[-119.146,34.7231],[-119.181,34.7257],[-119.18,34.7268],[-119.155,34.7272],[-119.649,34.4873]];
+var subSightings = [[-119.649,34.4873],[-119.636,34.4866],[-119.747,34.5054],[-119.18,34.7268],[-119.65,34.4888],[-119.181,34.7262],[-119.32,34.6955],[-119.146,34.7231],[-119.592,34.4772],[-119.648,34.4874],[-119.636,34.4865],[-119.321,34.696],[-119.181,34.7257],[-119.65,34.4889],[-119.155,34.7272],[-119.65,34.489],[-119.636,34.4864]];
 $(document).ready(function() {
 	var vectorSource = new ol.source.Vector({
       //create empty vector
@@ -9,9 +9,7 @@ $(document).ready(function() {
 		var iconFeature = new ol.Feature({
 		          geometry: new  
 		            ol.geom.Point(ol.proj.fromLonLat(item)),
-		        name: 'Flower',
-		        population: 4000,
-		        rainfall: 500
+		        name: 'Flower'
 		});
 		vectorSource.addFeature(iconFeature);
 	});
@@ -23,7 +21,7 @@ $(document).ready(function() {
         anchorXUnits: 'fraction',
         anchorYUnits: 'pixels',
         opacity: 0.75,
-        src: 'flower.png'
+        src: '../flower.png'
       }))
     });
 

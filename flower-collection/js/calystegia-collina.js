@@ -1,4 +1,4 @@
-var subSightings = [[-120.043,34.7428],[-119.749,34.5733],[-119.969,34.7299],[-120.013,34.7402],[-120.058,34.7403],[-120.043,34.7427]];
+var subSightings = [[-120.043,34.7428],[-119.969,34.7299],[-120.058,34.7403],[-120.043,34.7427],[-119.749,34.5733],[-120.013,34.7402]];
 $(document).ready(function() {
 	var vectorSource = new ol.source.Vector({
       //create empty vector
@@ -9,9 +9,7 @@ $(document).ready(function() {
 		var iconFeature = new ol.Feature({
 		          geometry: new  
 		            ol.geom.Point(ol.proj.fromLonLat(item)),
-		        name: 'Flower',
-		        population: 4000,
-		        rainfall: 500
+		        name: 'Flower'
 		});
 		vectorSource.addFeature(iconFeature);
 	});
@@ -23,7 +21,7 @@ $(document).ready(function() {
         anchorXUnits: 'fraction',
         anchorYUnits: 'pixels',
         opacity: 0.75,
-        src: 'flower.png'
+        src: '../flower.png'
       }))
     });
 

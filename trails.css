@@ -1,0 +1,16 @@
+#map {
+	width: 800px;
+	height: 500px;
+	margin: 0 auto;
+	border: 2px solid #b8d8b8;
+}
+
+.hamburglar {
+	padding: 20px;
+    display: inline-block;
+}
+
+h1 {
+	margin-top: 20px;
+	display: inline-block;
+}
