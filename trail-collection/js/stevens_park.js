@@ -1,5 +1,5 @@
 var geolocs = [[-119.735,34.447],[-119.734,34.4478],[-119.735,34.447],[-119.735,34.447]];
-var species = [2192,2722,2182,2317];
+var species = [2192,2722,2181,2317];
 
 $(document).ready(function() {
 	var vectorSource = new ol.source.Vector({
