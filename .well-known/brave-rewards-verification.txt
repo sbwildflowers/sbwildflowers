@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: sbwildflowers.com
+Token: 7bcb44e5ae2dae5f2bffe3b4f50fe60a75054807be1d4d1ba8876dcf7e44a555
