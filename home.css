@@ -1,0 +1,28 @@
+body {
+    background: linear-gradient(90deg, lightblue 50%, #b8d8b8 50%);
+}
+
+h1 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 55px;
+    background: #427942;
+    margin: 0;
+    padding: 10px 0;
+    color: pink;
+    width: 50vw;
+    margin: 0 auto;
+    border-bottom-left-radius: 49px;
+    border-bottom-right-radius: 49px;
+}
+
+@media (max-width: 1079px) {
+    body {
+        background: lightblue;
+    }
+
+    h1 {
+        width: 100vw;
+        font-size: 40px;
+    }
+}
