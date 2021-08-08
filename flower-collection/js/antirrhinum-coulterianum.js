@@ -1,4 +1,4 @@
-var subSightings = [[-119.585,34.4749],[-119.589,34.4657],[-119.585,34.475],[-119.585,34.4751],[-119.585,34.4752]];
+var subSightings = [[-119.585,34.4752],[-119.585,34.4749],[-119.585,34.4751],[-119.589,34.4657],[-119.585,34.475]];
 $(document).ready(function() {
 	var vectorSource = new ol.source.Vector({
       //create empty vector
